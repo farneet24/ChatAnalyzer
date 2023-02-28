@@ -382,11 +382,11 @@ if uploaded_file is not None:
         """, unsafe_allow_html=True)
 
         st.header('Spam Analyzer')
-        st.markdown('<p class="big-font">Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://sms-spam-6zao.onrender.com/">SMS Spam Analyzer</a></p>', unsafe_allow_html=True)
+        st.markdown('<p class="big-font">Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://farneet24-sms-spam-app-k1f0pg.streamlit.app/">SMS Spam Analyzer</a></p>', unsafe_allow_html=True)
         # st.markdown('''Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://sms-spam-6zao.onrender.com/">SMS Spam Analyzer</a>''', unsafe_allow_html=True)
 
         st.write('\n')
         st.write('\n')
         st.header('📝 Have questions?')
-        st.markdown("""Tell us what you want to know!! <a href="https://contact-us-6q8g.onrender.com/">Contact Us</a>""", unsafe_allow_html=True)
+        st.markdown("""Tell us what you want to know!! <a href="https://farneet24-contact-contact-y0vege.streamlit.app/">Contact Us</a>""", unsafe_allow_html=True)
 
