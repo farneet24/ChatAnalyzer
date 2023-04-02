@@ -23,7 +23,7 @@ st.set_page_config(
     }
 )
 
-
+para = True;
 
 def handle_feedback(feedback):
     if feedback == 'Yes':
@@ -33,6 +33,8 @@ def handle_feedback(feedback):
 
 
 title = st.title('Analysis will be shown here⬇️')
+st.text('\n')
+st.text('\n')
 st.sidebar.title('WhatsApp Chat Analyzer')
 st.sidebar.text('Developed by Farneet Singh')
 st.sidebar.text('\n')
@@ -61,6 +63,7 @@ if uploaded_file is not None:
     
     # Lets make the button
     if st.sidebar.button("Show Analysis"):
+        para = False;
         title.title("Detailed Analysis of the Chat")
         col1, col2, col3, col4 = st.columns(4)
 
@@ -389,4 +392,28 @@ if uploaded_file is not None:
         st.write('\n')
         st.header('📝 Have questions?')
         st.markdown("""Tell us what you want to know!! <a href="https://farneet24-contact-contact-y0vege.streamlit.app/">Contact Us</a>""", unsafe_allow_html=True)
+
+if para:
+    with st.expander("How to upload the chat?"):
+            # st.write("This is the content of the card")
+                html = """
+                <h2><u>Export chat history</u></h2>
+                    <p>You can use the export chat feature to export a copy of the chat history from an individual or group chat.</p>
+                    <ol>
+                        <li>Open the individual or group chat.</li>
+                        <li>Tap More options <img src="https://scontent.whatsapp.net/v/t39.8562-34/109105444_276026637003261_6902470040701723547_n.png?ccb=1-7&_nc_sid=2fbf2a&_nc_ohc=AmefhqxK-gUAX_AdSAu&_nc_ht=scontent.whatsapp.net&oh=01_AdR2xzISoH9PxZCgLPqGuCBSJz7_I5d7D8YBkDWNA4bFWw&oe=642F2462" alt=":", height = "20px"> > More > Export chat.</li>
+                        <li> Choose to export without media.</li>
+                    </ol> 
+                    <p></p>
+                """
+
+                html2 = '''
+                    <ul style="list-style-type:square;">
+                    <li>Upload the .txt file and Click on 'Show Analysis'</li>
+                    </ul>
+                    <p></p>'''
+
+                st.markdown(html, unsafe_allow_html=True)
+                st.warning("⚠️ Remember: Do not export 'with media'")        
+                st.markdown(html2, unsafe_allow_html=True)
 
