@@ -11,6 +11,7 @@ import requests
 import smtplib
 import preprocessor, helper
 
+st.help();
 st.set_page_config(
     page_title="Whatsapp Chat Analyzer",
     page_icon="4017334_circle_logo_media_network_social_icon.png",
