@@ -304,8 +304,8 @@ if uploaded_file is not None:
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             sorterIndex = dict(zip(sorter,range(len(sorter))))
-            r['Day_id'] = r['Day']
-            r['Day_id'] = r['Day_id'].map(sorterIndex)
+#             r['Day_id'] = r['Day']
+#             r['Day_id'] = r['Day_id'].map(sorterIndex)
             r.sort_values('Day_id', inplace=True)
 
             chart = alt.Chart(r).mark_bar().encode(
@@ -327,7 +327,7 @@ if uploaded_file is not None:
                                 labelFontSize=12  # set label font size for y-axis
                         )
 
-            st.altair_chart(chart)
+#             st.altair_chart(chart)
             
         with col2:
             st.header("Most Busy Month")
