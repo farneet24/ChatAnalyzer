@@ -300,32 +300,32 @@ if uploaded_file is not None:
         with col1:
             st.header("Most Busy Day")
             st.write("\n")
-            r = helper.week_Activity_map(selected_user, df)
+#             r = helper.week_Activity_map(selected_user, df)
 
-            sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-            sorterIndex = dict(zip(sorter,range(len(sorter))))
+#             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+#             sorterIndex = dict(zip(sorter,range(len(sorter))))
 #             r['Day_id'] = r['Day']
 #             r['Day_id'] = r['Day_id'].map(sorterIndex)
-            r.sort_values('Day_id', inplace=True)
+#             r.sort_values('Day_id', inplace=True)
 
-            chart = alt.Chart(r).mark_bar().encode(
-                                x=alt.X('Day:N', sort=None),
-                                y='Number of Messages',
-                                color=alt.Color('Day', scale=alt.Scale(scheme='inferno'), sort=None),
-                        ).properties(
-                                height = 500,
-                                width = 500
-            )
+#             chart = alt.Chart(r).mark_bar().encode(
+#                                 x=alt.X('Day:N', sort=None),
+#                                 y='Number of Messages',
+#                                 color=alt.Color('Day', scale=alt.Scale(scheme='inferno'), sort=None),
+#                         ).properties(
+#                                 height = 500,
+#                                 width = 500
+#             )
 
-            chart = chart.configure_axis(
-                                labelFontSize=0,
-                                domain=False,  # hide axis line
-                                labelAngle=0,  # set label angle to 0 degrees
-                        )
+#             chart = chart.configure_axis(
+#                                 labelFontSize=0,
+#                                 domain=False,  # hide axis line
+#                                 labelAngle=0,  # set label angle to 0 degrees
+#                         )
 
-            chart = chart.configure_axisY(
-                                labelFontSize=12  # set label font size for y-axis
-                        )
+#             chart = chart.configure_axisY(
+#                                 labelFontSize=12  # set label font size for y-axis
+#                         )
 
 #             st.altair_chart(chart)
             
