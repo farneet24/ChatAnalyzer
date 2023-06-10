@@ -119,7 +119,7 @@ if uploaded_file is not None:
                     labelFontSize=12  # set label font size for y-axis
                 )
 
-#                 st.altair_chart(chart)
+                st.altair_chart(chart)
             
             with col2:
                 # st.dataframe(percent, use_container_width=st.session_state.use_container_width)
