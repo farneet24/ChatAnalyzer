@@ -101,9 +101,9 @@ if uploaded_file is not None:
                 # st.pyplot(fig)
                 
                 chart = alt.Chart(data).mark_bar().encode(
-                    x='User:N',
-                    y='Number of messages:Q',
-                    color=alt.Color('User', scale=alt.Scale(scheme='inferno'))
+                    alt.X('User', type='nominal'),
+                    alt.Y('Number of messages', type='quantitative'),
+                    alt.Color('User', scale=alt.Scale(scheme='inferno'), type='nominal')
                 ).properties(
                     height = 500,
                     width = 500
