@@ -94,6 +94,7 @@ if uploaded_file is not None:
 #             name = data.index
 #             count = data.values
             st.write(data)
+            st.write(percent)
 
             with col1:
                 # fig, ax = plt.subplots()
