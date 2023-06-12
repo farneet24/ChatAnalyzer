@@ -104,7 +104,7 @@ if uploaded_file is not None:
                 
                 chart = alt.Chart(data).mark_bar().encode(
                     x = 'User:N',
-                    y = 'Number of messages:Q',
+                    y = 'count:Q',
                     color = alt.Color('User:N', scale=alt.Scale(scheme='inferno'))
                 ).properties(
                     height = 500,
