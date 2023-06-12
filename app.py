@@ -91,8 +91,8 @@ if uploaded_file is not None:
             st.write("\n")
             data, percent = helper.most_busy_users(df)
             col1, col2 = st.columns(2)
-            name = data.index
-            count = data.values
+#             name = data.index
+#             count = data.values
             st.write(data)
 
             with col1:
