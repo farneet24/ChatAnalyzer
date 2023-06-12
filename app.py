@@ -304,6 +304,8 @@ if uploaded_file is not None:
             st.write("\n")
             r = helper.week_Activity_map(selected_user, df)
             st.write(r)
+            r = r.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Day'})
+            st.write(r)
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             sorterIndex = dict(zip(sorter,range(len(sorter))))
