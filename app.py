@@ -336,6 +336,8 @@ if uploaded_file is not None:
             st.write("\n")
             dk = helper.month_Activity_map(selected_user, df)
             st.write(dk)
+            dk = dk.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Month'})
+            st.write(dk)
             dk['Month'] = pd.DatetimeIndex(pd.to_datetime(dk['Month'], format='%B')).month
             dk = dk.set_index('Month').sort_index().reset_index()
 
