@@ -93,6 +93,7 @@ if uploaded_file is not None:
             col1, col2 = st.columns(2)
 #             name = data.index
 #             count = data.values
+            data = data.melt('User', var_name='a', value_name='Number of messages')
             st.write(data)
             st.write(percent)
 
