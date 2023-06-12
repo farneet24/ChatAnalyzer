@@ -93,6 +93,7 @@ if uploaded_file is not None:
             col1, col2 = st.columns(2)
             name = data.index
             count = data.values
+            st.write(data)
 
             with col1:
                 # fig, ax = plt.subplots()
