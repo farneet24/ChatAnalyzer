@@ -94,6 +94,7 @@ if uploaded_file is not None:
 #             name = data.index
 #             count = data.values
             data = data.rename(columns={'count': 'Number of messages'})
+            percent = percent.rename(columns={'count': '% of messages'})
             st.write(data)
             st.write(percent)
 
@@ -105,7 +106,7 @@ if uploaded_file is not None:
                 
                 chart = alt.Chart(data).mark_bar().encode(
                     x = 'User:N',
-                    y = 'count:Q',
+                    y = 'Number of messages:Q',
                     color = alt.Color('User:N', scale=alt.Scale(scheme='inferno'))
                 ).properties(
                     height = 500,
