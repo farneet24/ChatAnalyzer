@@ -405,7 +405,7 @@ if para:
                     <p>You can use the export chat feature to export a copy of the chat history from an individual or group chat.</p>
                     <ol>
                         <li>Open the individual or group chat.</li>
-                        <li>Tap More options <img src="https://scontent.whatsapp.net/v/t39.8562-34/109105444_276026637003261_6902470040701723547_n.png?ccb=1-7&_nc_sid=2fbf2a&_nc_ohc=AmefhqxK-gUAX_AdSAu&_nc_ht=scontent.whatsapp.net&oh=01_AdR2xzISoH9PxZCgLPqGuCBSJz7_I5d7D8YBkDWNA4bFWw&oe=642F2462" alt=":", height = "20px"> > More > Export chat.</li>
+                        <li>Tap More options <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i> > More > Export chat.</li>
                         <li> Choose to export without media.</li>
                     </ol> 
                     <p></p>
