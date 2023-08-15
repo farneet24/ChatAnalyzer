@@ -405,7 +405,7 @@ if para:
                     <p>You can use the export chat feature to export a copy of the chat history from an individual or group chat.</p>
                     <ol>
                         <li>Open the individual or group chat.</li>
-                        <li>Tap More options <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i> > More > Export chat.</li>
+                        <li>Tap More options <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 128 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg> > More > Export chat.</li>
                         <li> Choose to export without media.</li>
                     </ol> 
                     <p></p>
