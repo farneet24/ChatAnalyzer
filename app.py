@@ -389,7 +389,7 @@ if uploaded_file is not None:
         """, unsafe_allow_html=True)
 
         st.header('Spam Analyzer')
-        st.markdown('<p class="big-font">Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://farneet24-sms-spam-app-j9qp5s.streamlit.app/">SMS Spam Analyzer</a></p>', unsafe_allow_html=True)
+        st.markdown('<p class="big-font">Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://farneet24-sms-spam-app-r53bi4.streamlit.app/">SMS Spam Analyzer</a></p>', unsafe_allow_html=True)
         # st.markdown('''Wanna know SMS or Email you received is Spam or not? Check out my <a href="https://sms-spam-6zao.onrender.com/">SMS Spam Analyzer</a>''', unsafe_allow_html=True)
 
         st.write('\n')
