@@ -278,7 +278,7 @@ if uploaded_file is not None:
         # Sort by month for better readability (optional)
         month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         grouped_df['month'] = pd.Categorical(grouped_df['month'], categories=month_order, ordered=True)
-        grouped_df = grouped_df.sort_values('Month')
+        grouped_df = grouped_df.sort_values('month')
         
         # # Display the DataFrame in Streamlit
         st.write("Grouped Data by Month:")
