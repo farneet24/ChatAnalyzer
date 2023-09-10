@@ -284,24 +284,48 @@ if uploaded_file is not None:
         st.write("Grouped Data by Month:")
         st.table(grouped_df)
         st.write(monthly)
-        li = list(monthly['Month'])
+        # li = list(monthly['Month'])
+        # datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
+
+        # # Sort the datetime objects
+        # sorted_datetimes = sorted(datetimes)
+
+        # # Convert the sorted datetime objects back to month-year strings
+        # sorted_data = [d.strftime('%B %Y') for d in sorted_datetimes]
+        # st.write(sorted_data)
+        # monthly['Month'] = sorted_data
+        # fig = px.line(monthly, x="Month", y="Number of Messages", markers=True)
+        # fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
+        # fig.update_layout(hoverlabel=dict(bgcolor='white', font=dict(color='red'), bordercolor='red'))
+        # fig.update_layout(
+        #     height=500,  # set the height in pixels
+        #     width=1000   # set the width in pixels
+        # )
+        # fig.update_traces(line=dict(color='green'))
+        # st.plotly_chart(fig)
+        grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
+        st.write("Grouped Data by Month year included:")
+        st.table(grouped_df)
+        # Sort by datetime
+        li = list(grouped_df['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
-
-        # Sort the datetime objects
         sorted_datetimes = sorted(datetimes)
-
-        # Convert the sorted datetime objects back to month-year strings
         sorted_data = [d.strftime('%B %Y') for d in sorted_datetimes]
-        st.write(sorted_data)
-        monthly['Month'] = sorted_data
-        fig = px.line(monthly, x="Month", y="Number of Messages", markers=True)
+        
+        # Update the DataFrame with the sorted Month column
+        grouped_df['Month'] = sorted_data
+        
+        # Plotting
+        fig = px.line(grouped_df, x="Month", y="Number_of_messages", markers=True)
         fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
         fig.update_layout(hoverlabel=dict(bgcolor='white', font=dict(color='red'), bordercolor='red'))
-        fig.update_layout(
-            height=500,  # set the height in pixels
-            width=1000   # set the width in pixels
-        )
+        fig.update_layout(height=500, width=1000)
         fig.update_traces(line=dict(color='green'))
+        
+        # Display the DataFrame and Plot in Streamlit
+        st.write("Sorted Data by Month:")
+        st.write(sorted_data)
+        st.write("Plot:")
         st.plotly_chart(fig)
 
         st.write("\n")
