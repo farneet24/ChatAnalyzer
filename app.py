@@ -292,7 +292,7 @@ if uploaded_file is not None:
 
         # Convert the sorted datetime objects back to month-year strings
         sorted_data = [d.strftime('%B %Y') for d in sorted_datetimes]
-
+        st.write(sorted_data)
         monthly['Month'] = sorted_data
         fig = px.line(monthly, x="Month", y="Number of Messages", markers=True)
         fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
