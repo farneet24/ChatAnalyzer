@@ -270,7 +270,15 @@ if uploaded_file is not None:
             st.title(f"{selected_user}'s Monthly Timeline")
         # Line Plot of NUMBER OF MESSAGES
         monthly = helper.monthly_timeline(selected_user, df)
-        st.write(monthly)
+        # Group by 'Month' and sum 'Number_of_messages'
+        grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
+        
+        # Sort by month for better readability (optional)
+        month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        grouped_df['Month'] = pd.Categorical(grouped_df['Month'], categories=month_order, ordered=True)
+        grouped_df = grouped_df.sort_values('Month')
+        
+        st.write(grouped_df)
         li = list(monthly['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
