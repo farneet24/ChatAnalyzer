@@ -272,6 +272,7 @@ if uploaded_file is not None:
         monthly = helper.monthly_timeline(selected_user, df)
         # Group by 'Month' and sum 'Number_of_messages'
         # Group by 'Month' and sum 'Number_of_messages'
+        monthly = pd.DataFrame(monthly)
         grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
         
         # Sort by month for better readability (optional)
