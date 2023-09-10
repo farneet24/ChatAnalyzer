@@ -283,7 +283,7 @@ if uploaded_file is not None:
         # # Display the DataFrame in Streamlit
         st.write("Grouped Data by Month:")
         st.table(grouped_df)
-        # st.write(monthly)
+        st.write(monthly)
         li = list(monthly['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
