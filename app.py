@@ -270,8 +270,8 @@ if uploaded_file is not None:
             st.title(f"{selected_user}'s Monthly Timeline")
         # Line Plot of NUMBER OF MESSAGES
         monthly = helper.monthly_timeline(selected_user, df)
+        st.write(monthly)
         li = list(monthly['Month'])
-        st.write(li)
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
         # Sort the datetime objects
