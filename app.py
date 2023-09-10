@@ -314,7 +314,19 @@ if uploaded_file is not None:
         
         # Update the DataFrame with the sorted Month column
         grouped_df['Month'] = sorted_data
+        st.write('This is Before you did something')
+        st.write(grouped_df)
+
+        grouped_df['Month'] = pd.to_datetime(grouped_df['Month'], format='%B %Y')
+
+        # Sort by 'Month'
+        grouped_df.sort_values('Month', inplace=True)
         
+        # Convert 'Month' back to string format for display
+        grouped_df['Month'] = grouped_df['Month'].dt.strftime('%B %Y')
+        
+        # Display the sorted DataFrame in Streamlit
+        st.write(grouped_df)
         # Plotting
         fig = px.line(grouped_df, x="Month", y="Number of Messages", markers=True)
         fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
