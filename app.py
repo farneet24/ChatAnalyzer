@@ -272,7 +272,7 @@ if uploaded_file is not None:
         monthly = helper.monthly_timeline(selected_user, df)
         # Group by 'Month' and sum 'Number_of_messages'
         # Group by 'Month' and sum 'Number_of_messages'
-        monthly = pd.DataFrame(monthly)
+        # monthly = pd.DataFrame(monthly)
         grouped_df = monthly.groupby('month').agg({'Number of Messages': 'sum'}).reset_index()
         
         # Sort by month for better readability (optional)
@@ -303,7 +303,7 @@ if uploaded_file is not None:
         # )
         # fig.update_traces(line=dict(color='green'))
         # st.plotly_chart(fig)
-        grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
+        grouped_df = monthly.groupby('Month').agg({'Number of Messages': 'sum'}).reset_index()
         st.write("Grouped Data by Month year included:")
         st.table(grouped_df)
         # Sort by datetime
@@ -316,7 +316,7 @@ if uploaded_file is not None:
         grouped_df['Month'] = sorted_data
         
         # Plotting
-        fig = px.line(grouped_df, x="Month", y="Number_of_messages", markers=True)
+        fig = px.line(grouped_df, x="Month", y="Number of Messages", markers=True)
         fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
         fig.update_layout(hoverlabel=dict(bgcolor='white', font=dict(color='red'), bordercolor='red'))
         fig.update_layout(height=500, width=1000)
