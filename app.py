@@ -278,7 +278,7 @@ if uploaded_file is not None:
         grouped_df['Month'] = pd.Categorical(grouped_df['Month'], categories=month_order, ordered=True)
         grouped_df = grouped_df.sort_values('Month')
         
-        st.write(grouped_df)
+        print(grouped_df)
         li = list(monthly['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
