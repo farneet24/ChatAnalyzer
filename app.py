@@ -271,6 +271,7 @@ if uploaded_file is not None:
         # Line Plot of NUMBER OF MESSAGES
         monthly = helper.monthly_timeline(selected_user, df)
         # Group by 'Month' and sum 'Number_of_messages'
+        # Group by 'Month' and sum 'Number_of_messages'
         grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
         
         # Sort by month for better readability (optional)
@@ -278,7 +279,9 @@ if uploaded_file is not None:
         grouped_df['Month'] = pd.Categorical(grouped_df['Month'], categories=month_order, ordered=True)
         grouped_df = grouped_df.sort_values('Month')
         
-        print(grouped_df)
+        # Display the DataFrame in Streamlit
+        st.write("Grouped Data by Month:")
+        st.table(grouped_df)
         li = list(monthly['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
