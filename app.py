@@ -272,18 +272,18 @@ if uploaded_file is not None:
         monthly = helper.monthly_timeline(selected_user, df)
         # Group by 'Month' and sum 'Number_of_messages'
         # Group by 'Month' and sum 'Number_of_messages'
-        # monthly = pd.DataFrame(monthly)
-        # grouped_df = monthly.groupby('Month').agg({'Number_of_messages': 'sum'}).reset_index()
+        monthly = pd.DataFrame(monthly)
+        grouped_df = monthly.groupby('month').agg({'Number of messages': 'sum'}).reset_index()
         
-        # # Sort by month for better readability (optional)
-        # month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-        # grouped_df['Month'] = pd.Categorical(grouped_df['Month'], categories=month_order, ordered=True)
-        # grouped_df = grouped_df.sort_values('Month')
+        # Sort by month for better readability (optional)
+        month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        grouped_df['month'] = pd.Categorical(grouped_df['month'], categories=month_order, ordered=True)
+        grouped_df = grouped_df.sort_values('month')
         
         # # Display the DataFrame in Streamlit
-        # st.write("Grouped Data by Month:")
-        # st.table(grouped_df)
-        st.write(monthly)
+        st.write("Grouped Data by Month:")
+        st.table(grouped_df)
+        # st.write(monthly)
         li = list(monthly['Month'])
         datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
 
