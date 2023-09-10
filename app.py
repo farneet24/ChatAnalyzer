@@ -307,26 +307,36 @@ if uploaded_file is not None:
         st.write("Grouped Data by Month year included:")
         st.table(grouped_df)
         # Sort by datetime
-        li = list(grouped_df['Month'])
-        datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
-        sorted_datetimes = sorted(datetimes)
-        sorted_data = [d.strftime('%B %Y') for d in sorted_datetimes]
-        
-        # Update the DataFrame with the sorted Month column
-        grouped_df['Month'] = sorted_data
-        st.write('This is Before you did something')
-        st.write(grouped_df)
-
         grouped_df['Month'] = pd.to_datetime(grouped_df['Month'], format='%B %Y')
-
+        
         # Sort by 'Month'
         grouped_df.sort_values('Month', inplace=True)
         
         # Convert 'Month' back to string format for display
         grouped_df['Month'] = grouped_df['Month'].dt.strftime('%B %Y')
+        st.write("Grouped Data by Month year included: NEW IMPLEMENT")
+        st.table(grouped_df)
         
-        # Display the sorted DataFrame in Streamlit
-        st.write(grouped_df)
+        # li = list(grouped_df['Month'])
+        # datetimes = [datetime.datetime.strptime(d, '%B %Y') for d in li]
+        # sorted_datetimes = sorted(datetimes)
+        # sorted_data = [d.strftime('%B %Y') for d in sorted_datetimes]
+        
+        # # Update the DataFrame with the sorted Month column
+        # grouped_df['Month'] = sorted_data
+        # st.write('This is Before you did something')
+        # st.write(grouped_df)
+
+        # grouped_df['Month'] = pd.to_datetime(grouped_df['Month'], format='%B %Y')
+
+        # # Sort by 'Month'
+        # grouped_df.sort_values('Month', inplace=True)
+        
+        # # Convert 'Month' back to string format for display
+        # grouped_df['Month'] = grouped_df['Month'].dt.strftime('%B %Y')
+        
+        # # Display the sorted DataFrame in Streamlit
+        # st.write(grouped_df)
         # Plotting
         fig = px.line(grouped_df, x="Month", y="Number of Messages", markers=True)
         fig.update_traces(hovertemplate='Time: %{x}<br>Number of Messages: %{y}')
