@@ -343,10 +343,6 @@ if uploaded_file is not None:
         fig.update_layout(hoverlabel=dict(bgcolor='white', font=dict(color='red'), bordercolor='red'))
         fig.update_layout(height=500, width=1000)
         fig.update_traces(line=dict(color='green'))
-        
-        # Display the DataFrame and Plot in Streamlit
-        st.write("Sorted Data by Month:")
-        st.write(sorted_data)
         st.write("Plot:")
         st.plotly_chart(fig)
 
