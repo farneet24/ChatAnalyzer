@@ -273,7 +273,7 @@ if uploaded_file is not None:
         # Group by 'Month' and sum 'Number_of_messages'
         # Group by 'Month' and sum 'Number_of_messages'
         monthly = pd.DataFrame(monthly)
-        grouped_df = monthly.groupby('month').agg({'Number of messages': 'sum'}).reset_index()
+        grouped_df = monthly.groupby('month').agg({'Number of Messages': 'sum'}).reset_index()
         
         # Sort by month for better readability (optional)
         month_order = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
