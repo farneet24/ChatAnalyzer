@@ -7,8 +7,6 @@
 3. [Technologies Used](#technologies-used)
 4. [Demo](#demo)
 5. [How to Use](#how-to-use)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Introduction
 
@@ -38,10 +36,3 @@ The project is live and can be accessed [here](https://farneet24-chatanalyzer-ap
 2. Upload your WhatsApp chat data file.
 3. Use the interactive filters and charts to analyze your data.
 
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) to get started.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
