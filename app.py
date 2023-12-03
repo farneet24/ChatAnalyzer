@@ -55,7 +55,7 @@ if uploaded_file is not None:
     user_list = df['user'].unique().tolist();
 
     # We dont want the group notification
-    user_list.remove('Group_Notification')
+    # user_list.remove('Group_Notification')
     user_list.sort()
     user_list.insert(0, 'Overall') # To find the overall analysis
 
