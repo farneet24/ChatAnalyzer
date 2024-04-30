@@ -43,4 +43,8 @@ Experience the live demo of WhatsApp Chat Analyzer by clicking [here](https://fa
 2. Upload the exported WhatsApp chat data file.
 3. Utilize the interactive filters and charts to conduct your analysis.
 
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+The project is licensed under the MIT License.
 
