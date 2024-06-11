@@ -93,9 +93,9 @@ if uploaded_file is not None:
             col1, col2 = st.columns(2)
             # name = data.index
             # count = data.values
-            st.write(data['User'])
+            # st.write(data['User'])
             # st.write(percent.columns)
-            # data = data.rename(columns={'count': 'Number of messages'})
+            data = data.rename(columns={'User': 'Number of messages', 'Number of messages' : 'User'})
             percent = percent.rename(columns={'count': '% of messages'})
 
             with col1:
