@@ -309,16 +309,13 @@ if uploaded_file is not None:
 
         with col1:
             st.header("Most Busy Day")
-            # st.write("\n")
+            st.write("\n")
             r = helper.week_Activity_map(selected_user, df)
-            st.write(r.columns)
-            # st.write("\n")
             
             # r = r.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Day'})
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             sorterIndex = dict(zip(sorter,range(len(sorter))))
-            st.write(r.columns)
             r['Day_id'] = r['Day']
             r['Day_id'] = r['Day_id'].map(sorterIndex)
             r.sort_values('Day_id', inplace=True)
