@@ -315,6 +315,7 @@ if uploaded_file is not None:
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             sorterIndex = dict(zip(sorter,range(len(sorter))))
+            st.write(r.columns)
             r['Day_id'] = r['Day']
             r['Day_id'] = r['Day_id'].map(sorterIndex)
             r.sort_values('Day_id', inplace=True)
