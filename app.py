@@ -309,12 +309,12 @@ if uploaded_file is not None:
 
         with col1:
             st.header("Most Busy Day")
-            st.write("\n")
+            # st.write("\n")
             r = helper.week_Activity_map(selected_user, df)
             st.write(r.columns)
-            st.write("\n")
+            # st.write("\n")
             
-            r = r.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Day'})
+            # r = r.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Day'})
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
             sorterIndex = dict(zip(sorter,range(len(sorter))))
@@ -348,7 +348,7 @@ if uploaded_file is not None:
             st.header("Most Busy Month")
             st.write("\n")
             dk = helper.month_Activity_map(selected_user, df)
-            dk = dk.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Month'})
+            # dk = dk.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Month'})
             dk['Month'] = pd.DatetimeIndex(pd.to_datetime(dk['Month'], format='%B')).month
             dk = dk.set_index('Month').sort_index().reset_index()
 
