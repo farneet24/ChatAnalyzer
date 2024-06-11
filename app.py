@@ -91,11 +91,11 @@ if uploaded_file is not None:
             st.write("\n")
             data, percent = helper.most_busy_users(df)
             col1, col2 = st.columns(2)
-#             name = data.index
-#             count = data.values
-            st.write(data.columns)
-            st.write(percent.columns)
-            data = data.rename(columns={'count': 'Number of messages'})
+            # name = data.index
+            # count = data.values
+            # st.write(data.columns)
+            # st.write(percent.columns)
+            # data = data.rename(columns={'count': 'Number of messages'})
             percent = percent.rename(columns={'count': '% of messages'})
 
             with col1:
