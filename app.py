@@ -311,6 +311,9 @@ if uploaded_file is not None:
             st.header("Most Busy Day")
             st.write("\n")
             r = helper.week_Activity_map(selected_user, df)
+            st.write(r.columns)
+            st.write("\n")
+            
             r = r.rename(columns={'count': 'Number of Messages', 'Number of Messages' : 'Day'})
 
             sorter = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
