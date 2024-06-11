@@ -93,8 +93,8 @@ if uploaded_file is not None:
             col1, col2 = st.columns(2)
 #             name = data.index
 #             count = data.values
-            data = data.rename(columns={'count': 'Number of messages'})
-            percent = percent.rename(columns={'count': '% of messages'})
+            # data = data.rename(columns={'count': 'Number of messages'})
+            # percent = percent.rename(columns={'count': '% of messages'})
 
             with col1:
                 # fig, ax = plt.subplots()
