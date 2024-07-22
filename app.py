@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import datetime
 import altair as alt
-import matplotlib.pyplot as plt
 import plotly.express as px
 import calendar
 import requests
