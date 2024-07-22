@@ -1,11 +1,9 @@
 import streamlit as st
-import seaborn as sns
 import pandas as pd
 import datetime
 import altair as alt
 import matplotlib.pyplot as plt
 import plotly.express as px
-from vega_datasets import data
 import calendar
 import requests
 import smtplib
