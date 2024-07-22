@@ -4,7 +4,6 @@ import pandas as pd
 import smtplib
 import emoji
 from collections import Counter
-from wordcloud import WordCloud
 
 extract = URLExtract()
 
@@ -62,33 +61,33 @@ def most_busy_users(df):
     return x, percent;
 
 
-def create_Word_Cloud(selected_user, df):
+# def create_Word_Cloud(selected_user, df):
 
-    if selected_user != 'Overall':
-        df = df[df['user'] == selected_user]
+#     if selected_user != 'Overall':
+#         df = df[df['user'] == selected_user]
 
-    temp = df[df['user'] != 'Group_Notification'] # Gave all data that are not Group_Notification
-    temp = temp[temp['message'] != '<Media omitted>\n']
+#     temp = df[df['user'] != 'Group_Notification'] # Gave all data that are not Group_Notification
+#     temp = temp[temp['message'] != '<Media omitted>\n']
 
-    f = open('stop_hinglish.txt', 'r')
-    stop_words = f.read()
+#     f = open('stop_hinglish.txt', 'r')
+#     stop_words = f.read()
 
-    def remove_stop_words(message):
-        words = []
+#     def remove_stop_words(message):
+#         words = []
 
-        for i in temp['message']:
-            for word in i.lower().split():
-                if word not in stop_words:
-                    words.append(word)
-        return " ".join(words)
+#         for i in temp['message']:
+#             for word in i.lower().split():
+#                 if word not in stop_words:
+#                     words.append(word)
+#         return " ".join(words)
 
-    # We will remove stop words and other stuff from word cloud
+#     # We will remove stop words and other stuff from word cloud
 
 
-    wc = WordCloud(height = 500, width = 1100, min_font_size=5, background_color='white')
-    temp['message'] = temp['message'].apply(remove_stop_words)
-    df_wc  = wc.generate(temp['message'].str.cat(sep = " "))
-    return df_wc
+#     wc = WordCloud(height = 500, width = 1100, min_font_size=5, background_color='white')
+#     temp['message'] = temp['message'].apply(remove_stop_words)
+#     df_wc  = wc.generate(temp['message'].str.cat(sep = " "))
+#     return df_wc
 
 def most_commom_words(selected_user, df):
 
